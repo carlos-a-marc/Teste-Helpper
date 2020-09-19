@@ -1,10 +1,10 @@
-function sendForm() {
+sendForm = () => {
     let data = formDataRead();
     AddReg(data);
 
 }
 
-function formDataRead() {
+formDataRead = () => {
     let data = {};
     data['name'] = document.getElementById('name').value;
     data['email'] = document.getElementById('email').value;
@@ -19,7 +19,7 @@ function formDataRead() {
     return data;
 }
 
-function AddReg(data) {
+AddReg = (data) => {
     let tableBody = document.getElementById('clientList').getElementsByTagName('tbody')[0];
     let row = tableBody.insertRow(tableBody.lenght);
     cell1 = row.insertCell(0);
@@ -42,7 +42,7 @@ function AddReg(data) {
 
     cell7 = row.insertCell(6);
     cell7.innerHTML = data.number;
-    
+
     cell8 = row.insertCell(7);
     cell8.innerHTML = data.neighborhood;
 
@@ -57,13 +57,13 @@ function AddReg(data) {
     clear();
 }
 
-function deleteReg(regLine) {
+deleteReg = (regLine) => {
     let row = regLine.parentElement.parentElement;
     document.getElementById('clientList').deleteRow(row.rowIndex);
     clear();
 }
 
-function clear(){
+clear = () => {
     document.getElementById('name').value = ''
     document.getElementById('email').value = ''
     document.getElementById('cpf').value = ''
